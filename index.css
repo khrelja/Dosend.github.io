@@ -17,14 +17,14 @@ body {
     /* 250 za prvi container, 1fr za sredinu, 300px za cart 
     fr - skracenica za fraction, fraction dostupnog mjesta u grid containeru
     */
-    grid-template-columns: 250px 1fr 300px;
+    grid-template-columns: 210px 1fr 300px;
     height: 100%;
     overflow: hidden;
 }
 
 /* dizajn Menu-a */
 #menu {
-    background: white;
+    background: rgb(245, 237, 225);
 }
 
 .brand-logo {
@@ -52,10 +52,126 @@ body {
     background: rgb(250, 222, 202);
 }
 
+/*container stupac u kojemu su kategorije slike ... sredina uglavnom*/
 #food-container {
-    background: coral;
+    background: whitesmoke;
+    /*overflow scroll, zbog velicine dopuste scrollanje za laksu preglednost*/
+    overflow: scroll;
+    /*clipa content tako da nije potrebno scrollanje vec stane*/
+    overflow-x: hidden;
+    /*daje defaultno box sizing ponasanje, dopusta ukljucenost paddinga i bordera u elementnu sirinu i visinu*/
+    box-sizing: content-box;
 }
 
-#moja-lista {
+/*search ikona, koliko stvari je u listi*/
+#header {
+    /*display flex ce automatski alignat stupce/retke sa automatskom sirinom i visinom */
+    display: flex;
+    /*justify content space between definira kako ce browser odrediti mjesto izmedu i okolo contenta duz glavne osi i vanjske osi grid containera 
+    zbog toga su search i broj stvari u listi ostali na lijevoj strani*/
+    justify-content: space-between;
+    align-items: center;
+    /*padding top - udaljenost od vrha stranice, padding bottom od dna stranice*/
+    padding-top: 40px;
+    padding-bottom: 10px;
+    /*postition sticky, header ce ostat 'glued' dok scrollamo po stranici*/
+    position: sticky;
+    /*ako je element u poziciji aboslute onda ce se staviti na vrh prvog pozicioniranog pretka valjda*/
+    top: 0;
+    background: whitesmoke;
+    /*definira redoslijed preklapajucih html elemenata
+    absolute pozicija ^^*/
+    z-index: 1;
+}
+
+/*posto je display none, scroll bar se ne vidi al dalje se moze scrollat*/
+::-webkit-scrollbar {
+    display: none;
+}
+
+/*za search i broj stvari u listi*/
+.util i,
+.user i {
+    font-size: 18px;
+    margin: 0 16px;
+    border: 1px solid orange;
+    padding: 8px 16px;
+    color: rgb(235, 161, 70);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/*kad se klikne na njih ce promjenit boju backgrounda tog boxa, inace ce biti bg whitesmoke*/
+.util i:active {
+    color: whitesmoke;
+    background: rgb(235, 161, 70);
+}
+
+#riba,
+#meso,
+#voce,
+#sirevi,
+#ugljikohidrati {
+    margin-top: 50px;
+}
+
+/*'card' koji sadrzi rating, ime i vise info opciju*/
+#riba #item-card,
+#ugljikohidrati #item-card,
+#sirevi #item-card {
+    background: rgb(242, 208, 208);
+}
+
+/*ista stvar^^*/
+#voce #item-card,
+#meso #item-card {
+    background: rgb(242, 208, 208);
+}
+
+
+#category-name,
+.item-menu {
+    margin: 10px;
+    font-size: 35px;
+    color: rgb(235, 161, 70);
+}
+
+/*velicina i sve ostalo za card*/
+#item-card {
+    width: 230px;
+    height: 270px;
+    padding: 10px;
+    /*space oko elementovog bordera dok je padding space izmedu elemntovog bordera i njegovog contenta*/
+    margin: 10px;
+    /*display inlince block omogucuje odredivanja visine i sirine elementa*/
+    display: inline-block;
+    border-radius: 15px;
+    background: rgb(245, 237, 225);
+    transition: 0.5s all ease-in-out;
+}
+
+/*slika u cardu*/
+#item-card img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+}
+
+
+button {
+    background-color: rgb(224, 168, 168);
+    color: whitesmoke;
+    border: none;
+    height: 20px;
+    width: 210px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: rgb(227, 127, 127);
+    transition: 0.3s;
+}
+
+#header #moja-lista {
     background: lavender;
 }
