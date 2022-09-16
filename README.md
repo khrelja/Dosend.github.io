@@ -1,5 +1,19 @@
-# Repozitorij Dosend webapp
+# dosend
 
-HTML/CSS/Javascript koji ce ju ciniti
+## Project setup
+```
+npm install
+```
 
-Adresa: https://Dosend.github.io
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
